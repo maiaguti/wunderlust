@@ -1,0 +1,681 @@
+/* Maia Gutierrez */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+/* Root Styles / Branded Color Variables */
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222;
+    --light-gray: #EAEAEA;
+    --white: #fff;
+    --black: #000;
+}
+
+:focus {
+    background-color: var(--yellow  );
+    border-color: var(--dark-gray);
+    border-width: 4px;
+}
+
+/* Branded Font Styles */
+h1, h2, h3 {
+    font-family: 'Molle', cursive;
+}
+h4, p, q, small, nav, button, form {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    line-height: 1.55em;
+}
+
+/* Screen Reader Accessible Only*/
+#skip, .sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+/* Header Styles */
+header {
+    background-image: linear-gradient(var(--teal), white); 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding-bottom: 3em;
+}
+
+header img {
+    grid-column: 1;
+    grid-row: 1;
+    padding-bottom: 1em;
+    width: 90%;
+    padding-top: 1em;
+}
+
+nav {
+    grid-column: 2;
+    grid-row: 1;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav li {
+    margin-top: .2em;
+}
+
+#menu-toggle label {
+    background-color: var(--yellow);
+    display: block;
+    width: 5em;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: .2em;
+}
+
+#menu-toggle a {
+    text-decoration: none;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+#menu-toggle a:hover {
+    color: var(--black);
+    background-color: var(--yellow);
+}
+
+#menu-toggle label:hover {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+[type="checkbox"] {
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+}
+
+h1 {
+    grid-column: span 2;
+    grid-row: 2;
+    padding-left: .5em;
+    padding-bottom: .25rem;
+    font-size: 2.85em;
+    margin-top: .5em;
+
+}
+
+header p {
+    grid-column: span 2;
+    grid-row: 3;
+    padding-left: 2em;
+    padding-right: 1em;
+ } 
+
+/* Intro Styles */
+#intro {
+    background-color: var(--white);
+}
+
+h2 {
+    padding-left: .75em;
+    font-size: 2.35em;
+    font-weight: 300;
+    padding-bottom: .25em;
+}
+
+#intro p {
+    padding-left: 1.75em;
+    padding-right: 2em;
+}
+
+#img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+#img-grid img {
+    padding-top: .75em;
+}
+
+#img-grid:last-child {
+    padding-bottom: 1.5em;
+}
+
+/* Plan Your Trip Styles */
+#plan {
+    background-color: var(--yellow);
+    padding-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.65em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#plan img {
+    background-color: #55BCD5;
+    padding: 1em;
+}
+
+#plan-svg {
+    justify-content: center;
+    align-content: center;
+}
+
+#plan section {
+    background-color: var(--teal);
+    padding-top: .5em;
+    max-width: 280px;
+    align-content: center;
+    text-align: center;
+    font-weight: 550;
+    text-transform: uppercase;
+    margin-bottom: .5em;
+    border-radius: 8px;
+    border: solid white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Testimonials Styles */
+#testimonials section {
+    align-content: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2em;
+    max-width: 300px;
+}
+
+#testimonials h4 {
+    padding-top: 1em;
+    font-size: 1.35em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#testimonials p {
+    padding: .25em;
+}
+
+
+/* About Styles */
+#about {
+    background-color: var(--blue);
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+#about img {
+    width: 50%;
+}
+
+#about section {
+    padding-bottom: .5em;
+}
+
+#about section:nth-of-type(2) {
+    padding-top: .4em;
+}
+
+#about section:last-of-type {
+    padding-top: 1.8em;
+}
+
+#about h4 {
+    padding-top: .5ch;
+    font-weight: 600;
+}
+
+#about p {
+    font-size: .9em;
+}
+
+
+/* Contact Styles */
+#contact {
+    padding-bottom: 1.5em;
+}
+
+.form-required {
+    font-family: 'Montserrat';
+    font-size: .5em;
+    font-style: italic;
+    font-weight: 200;
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    padding-left: 2em;
+}
+
+input, label, fieldset {
+    display: block;
+    width: 86%;
+}
+
+input {
+    height: 2.5em;
+    margin-bottom: 1em;
+    border-color: var(--purple);
+    border-radius: 0;
+}
+
+label, legend {
+    font-size: .85em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+form .required {
+    display: inline-block;
+    color: var(--purple);
+    font-size: .95em;
+}
+
+legend {
+    padding-bottom: 1em;
+
+}
+
+fieldset label {
+    font-weight:200;
+    text-transform: none;
+    width: 100%;
+    max-width: 75px;
+    padding-bottom: 1em;
+    display: inline-block;
+    text-align: center;
+}
+
+fieldset input {
+    height: 2.8em;
+    margin-left: 0;
+    max-width: 50px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    margin-bottom: .5em;
+}
+
+#prefEmail, #prefText, #prefPhone {
+    accent-color: var(--purple);
+}
+
+#destination, #travelTime {
+    border-radius: 0;
+    border-color: var(--purple);
+    max-width: 300px;
+    width: 89%;
+    height: 2.8em;
+    background-color: var(--white);
+    margin-bottom: 1em;
+}
+
+#mySubmit {
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin-top: 1em;
+    font-size: 1em;
+    border: none;
+}
+#mySubmit:focus {
+    border-color: var(--yellow);
+    border-width: 2px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--light-gray);
+    padding-top:1.5em;
+    padding-bottom:1.5em;
+    text-align: center;
+    font-size: .75em;
+}
+
+footer a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-top: 1em;
+    color: var(--dark-gray);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:501px) {
+/* Header Styles */
+input[type="checkbox"], #menu-toggle label{
+    max-width: 1px;
+    max-height: 1px;
+    visibility: hidden;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+header img {
+    width: 100%;
+    max-width: fit-content;
+    min-width: 100px;
+}
+
+h1 {
+    grid-column: 2;
+    grid-row: 1;
+    padding-left:0;
+    padding-bottom: 0;
+    font-size: 3.8em;
+    padding-top: .25em;
+}
+
+header p {
+    grid-column: 2/4;
+    grid-row: 2;
+    padding-left: 0;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav {
+    grid-column: 1/4;
+    grid-row: 3;
+    margin: 0 auto;
+    font-weight: 600;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+nav li {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    padding-left: 1em;
+    font-size: 85%;
+}
+
+nav a {
+    color: var(--dark-gray);
+    background-color: var(--white);
+    padding: .55em;
+    margin-top: 0;
+}
+
+nav a:focus, nav a:hover {
+    background-color: var(--yellow);
+}
+
+
+/* Majorca Gallery Styles */
+#img-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2;
+    justify-items: center;
+    align-items: center;
+    max-width: 974px;
+    margin: 0 auto;
+}
+
+#img-grid img:first-of-type {
+    grid-row: 1;
+    grid-column: 1;
+    width: 98%;
+}
+
+#img-grid img:nth-of-type(2) {
+    grid-row: 1;
+    grid-column: 2;
+    width: 98%;
+}
+
+#img-grid picture {
+    grid-row: 2;
+    grid-column: span 2;
+    width: 100%;
+    margin-left: 1em;
+}
+
+/* Plan Styles */
+#plan-svg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Testimonials */
+#testimonials div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: .5em;
+    font-size: 90%;
+    justify-items: center;
+    align-items: center;
+}
+
+/* About Styles */
+#about div {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1.3em;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Form Styles */
+form {
+    max-width: 700px;
+}
+
+#mySubmit {
+    max-width: 200px;
+}
+
+}
+
+
+
+
+
+
+@media screen and (min-width:976px) {
+    /* Header Styles */
+    header {
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    nav {
+        grid-column: 3;
+        grid-row: 1;
+        font-size: .8em;
+        font-weight: 600;
+        padding-left: none;
+        padding-top: none;
+    }
+
+    /* Plan Styles */
+    #plan-svg {
+        display: flex;
+        flex-direction: row;
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* Testimonials */
+    #testimonials div {
+        display: flex;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #testimonials section {
+        max-width: 25%;
+    }
+
+    /* Contact Styles */
+    form {
+        display: grid;
+        grid-template-columns: repeat (3, 1fr);
+        grid-template-rows: auto;
+        max-width: 1019px;
+    }
+
+    #names {
+        grid-column: 1;
+    }
+
+    #nums {
+        grid-column: 2;
+    }
+    
+    #selects, #mySubmit {
+        grid-column: 3;
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+
+    /* Header Styles */
+    h1 {
+        font-size: 5em;
+    }
+
+    nav a {
+        font-size: 1.2em;
+    }
+
+    /* Intro Styles */
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    #intro p {
+        padding-top: 3em;
+        font-size: 1.2em;
+    }
+
+    #intro h2, #intro p {
+        grid-column: 1;
+        grid-row:1;
+    }
+
+    #img-grid {
+        grid-column: 2;
+        grid-row: 1;
+        padding-right: 2em;
+    }
+}
